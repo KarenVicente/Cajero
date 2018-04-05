@@ -6,6 +6,7 @@ $ (function() {
    		$("#formularioBan").slideToggle("slow");
    		$('#formularioGt').hide();
    		$('#informacion').hide();
+   		$('#imagen').hide();
    		$("#b").toggleClass("link");
    		$("#g").removeClass("link");
 
@@ -14,6 +15,7 @@ $ (function() {
    		$("#formularioGt").slideToggle("slow");
    		$('#formularioBan').hide();
    		$('#informacion').hide();
+   		$('#imagen').hide();
    		$("#g").toggleClass("link");
    		$("#b").removeClass("link");
 
@@ -37,6 +39,7 @@ $ (function() {
 				console.log(retorno);
 				if(retorno=='Bienvenidos a tu Cajero Automático.'){
 					$('#acceso').show(100);
+					$('#enlaces').hide();
 					$('#banco').html('Banrural')
 					$('#formularioBan').hide();
 					
@@ -65,6 +68,7 @@ $ (function() {
 				console.log(retorno);
 				if(retorno=='Bienvenidos a tu Cajero Automático.'){
 					$('#acceso').show(100);
+					$('#enlaces').hide();
 					$('#banco').html('G&T')
 					$('#formularioGt').hide();
 					
@@ -77,4 +81,15 @@ $ (function() {
 			}
 		});
 	});
+	$('#mas').hide(); 
+	$('#monto').click(function() {
+   		$('#retiro').hide();
+   		$('#mas').show(1000);
+   		
+   	});
+
+   
+
+
+
 

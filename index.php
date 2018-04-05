@@ -1,3 +1,10 @@
+<?php 
+	session_start();
+	require_once 'Libreria/class.conexion.php';
+	$base= new base();
+
+	$base-> conectar();
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -19,25 +26,25 @@
 
 	}
 </style>
-	<?php 
-	require_once 'Libreria/class.conexion.php';
-	$base= new base();
-
-	$base-> conectar();
-	 ?>
-	 <main>
+<body>
+	<main>
 	 	<div class="container">
 	 		<div class="row">
-	 			<div class="col m4">
-	 				<h5  class="">Bancos Disponibles</h5>
-	 				<a href="#" id="b">Banrural</a><br>
-	 				<a href="#" id="g">G&T</a>
+	 			<div class="col m12">
+	 				<h1 class="center">Cajero Automático</h1>
 	 			</div>
-	 			<div class="col m8">
-	 				<h1>Cajero Automático</h1>
+	 			<div class="col m3" id="nlaces">
+	 				<div id="enlaces" class="collection">
+	 					<h6  class="collapsible-header">Bancos Disponibles</h6>
+	 					<a href="#" id="b" class="collection-item">Banrural</a><br>
+	 					<a href="#" id="g" class="collection-item">G&T</a>
+	 				</div>
+	 			</div>
+	 			<div class="col m9">
 	 				<p id="informacion">
 	 					<b>Bienvenido a tú cajero atomático.
 	 					</b>  Estamos aquí para servirte desde el lugar en el que te encuentres. Selecciona un banco parainiciar con tu accion.
+	 					<div class="center" id="imagen"><img src="Imagenes/cajero.gif" alt=""></div>
 	 				</p>
 	 				<form id="formularioBan">
 				 		<div class="row">
@@ -90,10 +97,10 @@
 	      <h4>Bienvenido a tu Banco <span id="banco"></span></h4>
 	      <p>Selecciona la funcion que necesitas</p>
 	      <ul>
-	      	<li><i class="tiny material-icons">label</i><a href="#!"> Retiro</a></li>
-	      	<li><i class="tiny material-icons">label</i><a href="#!"> Consultar saldo</a></li>
-	      	<li><i class="tiny material-icons">label</i><a href="#!"> Últimos retiros</a></li>
-	      	<li><i class="tiny material-icons">label</i><a href="#!"> Cancelar</a></li>
+	      	<li><i class="tiny material-icons">label</i><a href="retiro.php"> Retiro</a></li>
+	      	<li><i class="tiny material-icons">label</i><a href="saldos.php"> Consultar saldo</a></li>
+	      	<li><i class="tiny material-icons">label</i><a href="ultimos.php"> Últimos retiros</a></li>
+	      	<li><i class="tiny material-icons">label</i><a href="finalizar.php"> Cancelar</a></li>
 	      </ul>
 	    </div>
 	    <div class="modal-footer">
@@ -112,7 +119,6 @@
 		    
 		  });
 	</script>
-<body>
 	
 </body>
 </html>
