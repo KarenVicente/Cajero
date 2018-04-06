@@ -32,6 +32,11 @@
 			$assoc = mysql_fetch_assoc($this->resultado);
 			return $assoc;
 		}
+		public function confirmar()
+		{
+			$afectada = mysqli_affected_rows($this->conexion);
+			return $afectada;
+		}
 
 	}
 

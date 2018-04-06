@@ -1,4 +1,5 @@
 <?php 
+	error_reporting(0);
 	session_start();
 	require_once 'Libreria/class.conexion.php';
 	$base= new base();
@@ -11,11 +12,12 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<title>Cajero Automático</title>
-	 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Bree+Serif|Raleway" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
 	<link rel="stylesheet" href="materialize/css/materialize.css">
 </head>
+<?php  ?>
 <style>
 	body{
 		font-family: Raleway;
@@ -33,7 +35,8 @@
 	 			<div class="col m12">
 	 				<h1 class="center">Cajero Automático</h1>
 	 			</div>
-	 			<div class="col m3" id="nlaces">
+	 			<?php if ($_SESSION['tarjeta']=="" && $_SESSION['password']=="") { ?>
+	 			<div class="col m3">
 	 				<div id="enlaces" class="collection">
 	 					<h6  class="collapsible-header">Bancos Disponibles</h6>
 	 					<a href="#" id="b" class="collection-item">Banrural</a><br>
@@ -83,6 +86,7 @@
 				 		</div>
 				 	</form>
 	 			</div>
+	 			<?php } ?>
 	 		</div>
 	 </main>
 
@@ -91,10 +95,10 @@
 
 	  <!-- Modal Trigger -->
 
-
-	  <div id="acceso" class="modal">
+		<?php if ($_SESSION['tarjeta']!="" && $_SESSION['password']!=""){ ?>
+	  <div id="acceso" class="modal" style="display: block;">
 	    <div class="modal-content">
-	      <h4>Bienvenido a tu Banco <span id="banco"></span></h4>
+	      <h4>Bienvenido a tu Banco <!--<span id="banco"></span>--><?php echo $_SESSION['nombreb'];  ?></h4>
 	      <p>Selecciona la funcion que necesitas</p>
 	      <ul>
 	      	<li><i class="tiny material-icons">label</i><a href="retiro.php"> Retiro</a></li>
@@ -107,6 +111,7 @@
 	      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
 	    </div>
 	  </div>
+	  <?php } ?>
 	 
 
 

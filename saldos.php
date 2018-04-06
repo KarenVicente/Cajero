@@ -1,5 +1,14 @@
 <?php 
 	session_start();
+	require_once 'Libreria/class.conexion.php';
+	$base= new base();
+	$base-> conectar();
+
+	$consulta="SELECT Saldo FROM usuarios WHERE Cod_Usuario=".$_SESSION['codigo'];
+	$ejecutar=$base->ejecutar($consulta);
+	$fila=$base->obtener_array($ejecutar);
+
+	//echo $consulta;
  ?>
 
 
@@ -28,7 +37,7 @@
 					<div>_____________________</div>
 				</div>
 				<div class="col m4">
-					<div>Q 123.00</div>
+					<div>Q <?php echo number_format($fila['Saldo'],'2','.',','); ?></div>
 				</div>
 
 			</div>

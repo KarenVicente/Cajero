@@ -1,10 +1,10 @@
 <?php 
 	class retiro extends base{
-		public $saldo=3000;
 
-		public function actual($retiro)
+		public function actual($saldo,$retiro)
 		{
-			# code...
+			$actual=$saldo-$retiro;
+			return $actual;
 		}
 	}
 
