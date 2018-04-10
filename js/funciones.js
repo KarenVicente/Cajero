@@ -89,16 +89,16 @@ $ (function() {
 		e.preventDefault();
 
 		var controlador="procesos/procesar_retiro.php";
-
-		$.ajax({
+		
+			 
+			$.ajax({
 			url:controlador,
 			type:'POST',
 			data:$('#mas').serialize(),
 			success:function (retorno) {
 				console.log(retorno);
 				if(retorno=='Exitoso'){
-					//window.setTimeout("window.location='mensaje.php';", 100); 
-					
+					window.setTimeout("window.location='mensaje.php';", 100); 
 				}
 				else if(retorno=='<b> No se realizo el retiro. </b> No cuentas con el suficiente fondo.'){
 					$('#denegado').html('No cuentas con el suficiente fondo').show(200).delay(10000).hide(200);
@@ -114,6 +114,7 @@ $ (function() {
 
 			}
 		});
+			
 	});
 
 	$('#mas').hide(); 
@@ -122,7 +123,7 @@ $ (function() {
    		$('#mas').show(1000);
    		
    	});
-
+		
    
 
 

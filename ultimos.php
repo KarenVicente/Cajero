@@ -4,7 +4,25 @@
 	$base= new base();
 	$base-> conectar();
 
-	$consulta="SELECT Cod_Retiros, Monto, Cod_Usuario, Cod_Tarjeta, Fecha_retiro FROM retiros WHERE Cod_Usuario=".$_SESSION['codigo'];
+	$fecha=date('Y-m-d');
+	$_SESSION['fecha']=$fecha;
+
+	/*$consulta="SELECT usuarios.Nombre as nombre, usuarios.Saldo as saldo, tarjetas.Numero as tarjeta, retiros.Fecha_retiro as fecha
+				FROM usuarios,tarjetas,retiros
+				WHERE usuarios.Cod_Usuario=tarjetas.Cod_Usuario
+				AND retiros.Cod_Usuario=usuarios.Cod_Usuario
+				AND tarjetas.Numero=".$_SESSION['tarjeta']."
+				AND usuarios.Cod_Usuario=".$_SESSION['codigo']."
+				AND retiros.Fecha_retiro=".$_SESSION['fecha'];*/
+	$consulta="SELECT usuarios.Nombre as nombre, usuarios.Saldo as saldo, tarjetas.Numero as tarjeta, retiros.Fecha_retiro as fecha
+				FROM usuarios, tarjetas, retiros
+				WHERE tarjetas.Cod_Usuario=usuarios.Cod_Usuario
+				AND retiros.Cod_Usuario=usuarios.Cod_Usuario
+				AND usuarios.Cod_Usuario=".$_SESSION['codigo']."
+				AND tarjetas.Numero=".$_SESSION['tarjeta']."
+				LIMIT 3 ";
+
+
 	$ejecutar=$base->ejecutar($consulta);
 	$fila=$base->obtener_array($ejecutar);
  ?>
@@ -23,20 +41,34 @@
 <body>
 	<div class="container">
 		<div class="row">
-			<div class="col m12">
-				<div class="col m12">Últimos retiros</div>
+			<div class="col offset-m3 m6">
+				<!--<div class="col m12">Últimos retiros</div>-->
 				<h4 class="center"><b><span id="banco"><?php echo $_SESSION['nombreb']; ?></span></b></h4>
-				<label for="">Nombre</label> Karen Vicente <br>
-				<label for="">No. de Tarjeta</label> 123456789 <br>
-				<div class="col m1">
-					<div></div>
+				<label for="">Nombre</label> <?php echo $fila['nombre'] ?> <br>
+				<label for="">No. de Tarjeta</label> <?php echo $fila['tarjeta'] ?> <br>
+				<div class="col m12">
 				</div>
-				<div class="col m2">
-					<div>_____________________</div>
-				</div>
-				<div class="col m4">
-					<div>Q <?php echo number_format($fila['Saldo'],'2','.',','); ?></div>
-				</div>
+				<?php
+					$consulta="SELECT usuarios.Nombre as nombre, usuarios.Saldo as saldo, tarjetas.Numero as tarjeta, retiros.Fecha_retiro as fecha
+					FROM usuarios, tarjetas, retiros
+					WHERE tarjetas.Cod_Usuario=usuarios.Cod_Usuario
+					AND retiros.Cod_Usuario=usuarios.Cod_Usuario
+					AND usuarios.Cod_Usuario=".$_SESSION['codigo']."
+					AND tarjetas.Numero=".$_SESSION['tarjeta']."
+					LIMIT 3 "; 
+
+					$ejecutar=$base->ejecutar($consulta);
+
+					while ($fila=$base->obtener_array($ejecutar)) {
+						echo '<table class="responsive">
+								<tr>
+									<th>'.$fila["fecha"].'</th>
+									<td>Q '.number_format($fila["saldo"],2,'.',',').'</td>
+								</tr>
+							</table>';
+					}
+
+				 ?>
 
 			</div>
 		</div>

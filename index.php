@@ -99,7 +99,7 @@
 	  <div id="acceso" class="modal" style="display: block;">
 	    <div class="modal-content">
 	      <h4>Bienvenido a tu Banco <!--<span id="banco"></span>--><?php echo $_SESSION['nombreb'];  ?></h4>
-	      <p>Selecciona la funcion que necesitas</p>
+	      <p>Selecciona la función que necesitas</p>
 	      <ul>
 	      	<li><i class="tiny material-icons">label</i><a href="retiro.php"> Retiro</a></li>
 	      	<li><i class="tiny material-icons">label</i><a href="saldos.php"> Consultar saldo</a></li>
@@ -108,7 +108,7 @@
 	      </ul>
 	    </div>
 	    <div class="modal-footer">
-	      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+	      
 	    </div>
 	  </div>
 	  <?php } ?>

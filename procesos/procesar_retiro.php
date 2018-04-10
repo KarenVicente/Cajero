@@ -21,8 +21,6 @@
 
 		$ejecutar=$base->ejecutar($consulta);
 
-		echo $consulta;
-
 		$actual = $retiro->actual($fila['Saldo'],$monto);
 
 		$consulta="UPDATE usuarios SET Saldo=".$actual." WHERE Cod_Usuario=".$_SESSION['codigo'];
@@ -39,23 +37,4 @@
 		echo "No se retiro nada.";
 
 	}
-
-
-		//header('Location:../mensaje.php')
-
-
-
-
-
-	
-
-
-
-
-
-
-
-
-
-
  ?>
