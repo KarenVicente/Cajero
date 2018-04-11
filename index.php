@@ -63,7 +63,7 @@
 				 				<button id="bboton" data-target="modal1" class="btn waves-effect waves-light right green darken-3">Confirmar</button>
 				 			</div>
 				 			<div class="offset-m2 col m5">
-				 				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni iure harum aliquid itaque amet dolore mollitia magnam voluptatibus iste ipsam.
+				 				Somos un grupo financiero orientado al desarrollo rural integral del país, con capital privado y multisectorial con servicios de banca universal y cobertura nacional y regional, dirigido preferentemente al micro, pequeño y mediano empresario, agricultor y artesano.
 				 			</div>
 				 		</div>
 				 	</form>
@@ -78,10 +78,10 @@
 				 				<input type="text" name="tarjeta" id="gtarjeta">
 				 				<label>Contraseña </label>
 				 				<input type="password" name="password" id="gpassword">
-				 				<button id="gboton" data-target="modal1" class="btn waves-effect waves-light  blue right">Confirmar</button>
+				 				<button id="gboton" data-target="modal1" class="btn waves-effect waves-light  blue accent-4 right">Confirmar</button>
 				 			</div>
 				 			<div class="offset-m2 col m5">
-				 				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni iure harum aliquid itaque amet dolore mollitia magnam voluptatibus iste ipsam.
+				 				Somos el Banco de Tu Vida, por nuestra trayectoria, dinamismo, conocimiento del cliente y la constante aplicación de principios y valores en nuestras prácticas de negocio.
 				 			</div>
 				 		</div>
 				 	</form>

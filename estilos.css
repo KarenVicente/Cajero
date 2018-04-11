@@ -1,0 +1,33 @@
+	.container{
+		font-family: Montserrat;
+		padding-top: 5%;
+	}
+	.encabezado{
+		padding-top: 50px;
+	}
+	.centrar{
+		padding: 40%;
+	}
+	.card-content{
+		border-right: 15px solid #455a64;
+	}
+	.mm{
+		padding-top: 20px;
+	}
+	.encabezado{
+		padding-top: 50px;
+	}
+	.monto a:hover{
+		cursor: pointer;
+		color:#0277bd;
+		/*font-family: Bree Serif;*/
+		font-weight: bold;
+	}
+	.monto a:focus{
+		color:#01579b;
+		font-weight: bold;
+		/*font-family: Bree Serif;*/
+	}
+	body{
+		font-family: Raleway;
+	}
